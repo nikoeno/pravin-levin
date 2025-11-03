@@ -1,11 +1,43 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Logo from "../components/Logo.astro";
+import SocialLink from "../components/SocialLink.astro";
+import Layout from "../layouts/Layout.astro";
+import "../preflight.css";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <main class="main">
+    <Logo />
+    <!-- <h1 class="title">Des</h1> -->
+    <SocialLink href="https://t.me/aboba" social="telegram">Telegram</SocialLink>
+    <SocialLink href="https://t.me/aboba" social="discord">Discord</SocialLink>
+    <SocialLink href="https://t.me/aboba" social="twitch">Twitch</SocialLink>
+    <SocialLink href="https://t.me/aboba" social="twitter">Twitter</SocialLink>
+  </main>
 </Layout>
+<style>
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 700px;
+    border-radius: 4rem;
+    margin: 0 auto;
+    flex-grow: 1;
+  }
+
+  .title {
+    color: white;
+    font-size: 32px;
+    padding: 1rem 4rem;
+    backdrop-filter: blur(var(--background-blur-primary));
+    border-radius: 4rem;
+    text-align: center;
+  }
+</style>
