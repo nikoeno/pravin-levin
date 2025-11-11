@@ -3,41 +3,221 @@ import Logo from "../components/Logo.astro";
 import SocialLink from "../components/SocialLink.astro";
 import Layout from "../layouts/Layout.astro";
 import "../preflight.css";
+/*
+https://www.twitch.tv/Nix +
+https://t.me/nixtalk посты от меня и анонсы стрима, по личным вопросам в ЛС +
+https://www.youtube.com/@Nixtwitch Хайлайты Youtube +
+https://www.youtube.com/@NixStreamVods/videos записи стримов +
+https://www.youtube.com/@nixarhiv/videos Архив Youtube +
+https://www.tiktok.com/@nix.dota Tiktok нарезчик в зоне +
+https://boosty.to/nixjkeee записи просмотра фильмов/сериалов/аниме
+https://discord.gg/nix Дискорд сервер
+https://vk.com/nixjke Группа ВК новости и мемы
+https://www.instagram.com/nixjke/ Инста
+https://docs.google.com/document/d/148k6vnWZp0ALa4VmPxNV0NaSm5VtpHno7ll8rI2vgx0/edit?tab=t.0 Конфиг ПК и девайсы
+https://shikimori.one/nixjke/list/anime?order=rate_score рейтинг аниме на Шикимори
+https://t.me/NixtalkChat Телеграм чат
+https://cyberbb.ru/tw/nix забрать до 10.000 фрибетов на BetBoom 
+https://clck.ru/3PznTq 10% скидка по промо NIX в NUW
+nixoffers@gmail.com почта для деловых предложений
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+*/
+type Categories = "main-content" | "community" | "personal" | "other";
+const socials = [
+  {
+    name: "Основной канал для стримов",
+    url: "https://www.twitch.tv/Nix",
+    type: "twitch",
+    category: "main-content",
+  },
+  {
+    // name: "посты от меня и анонсы стрима, по личным вопросам в ЛС",
+    name: "Канал с постами и анонсами стримов",
+    url: "https://t.me/nixtalk",
+    type: "telegram",
+    category: "community",
+  },
+  {
+    name: "Хайлайты",
+    url: "https://www.youtube.com/@Nixtwitch",
+    type: "youtube",
+    category: "main-content",
+  },
+  {
+    name: "Записи стримов",
+    url: "https://www.youtube.com/@NixStreamVods/videos",
+    type: "youtube",
+    category: "main-content",
+  },
+  {
+    name: "Архив",
+    url: "https://www.youtube.com/@nixarhiv/videos",
+    type: "youtube",
+    category: "main-content",
+  },
+  {
+    name: "Нарезчик в зоне",
+    url: "https://www.tiktok.com/@nix.dota",
+    type: "tiktok",
+    category: "main-content",
+  },
+  {
+    name: "Записи просмотровых стримов",
+    url: "https://boosty.to/nixjkeee",
+    type: "",
+    category: "main-content",
+  },
+  {
+    name: "Дискорд сервер",
+    url: "https://discord.gg/nix",
+    type: "discord",
+    category: "community",
+  },
+  {
+    name: "Группа ВК новости и мемы",
+    url: "https://vk.com/nixjke",
+    type: "vk",
+    category: "community",
+  },
+  {
+    name: "Конфиг ПК и девайсы",
+    url: "https://docs.google.com/document/d/148k6vnWZp0ALa4VmPxNV0NaSm5VtpHno7ll8rI2vgx0/edit?tab=t.0",
+    type: "",
+    category: "personal",
+  },
+  {
+    name: "рейтинг аниме на Шикимори",
+    url: "https://shikimori.one/nixjke/list/anime?order=rate_score",
+    type: "",
+    category: "personal",
+  },
+  {
+    name: "Телеграм чат",
+    url: "https://t.me/NixtalkChat",
+    type: "telegram",
+    category: "community",
+  },
+  {
+    name: "Забрать до 10.000 фрибетов на BetBoom",
+    url: "https://cyberbb.ru/tw/nix",
+    type: "",
+    category: "personal",
+  },
+  {
+    name: "10% скидка по промо NIX в NUW",
+    url: "https://clck.ru/3PznTq",
+    type: "",
+    category: "personal",
+  },
+  {
+    name: "Почта для деловых предложений",
+    url: "nixoffers@gmail.com",
+    type: "",
+    category: "personal",
+  },
+] as const;
 ---
 
 <Layout>
   <main class="main">
-    <Logo />
-    <!-- <h1 class="title">Des</h1> -->
-    <SocialLink href="https://t.me/aboba" social="telegram">Telegram</SocialLink>
-    <SocialLink href="https://t.me/aboba" social="discord">Discord</SocialLink>
-    <SocialLink href="https://t.me/aboba" social="twitch">Twitch</SocialLink>
-    <SocialLink href="https://t.me/aboba" social="twitter">Twitter</SocialLink>
+    <div class="container">
+      <!-- <Logo /> -->
+      <div>
+        <h2 class="title">Стримы и записи</h2>
+      </div>
+      <div class="socials-container">
+        {
+          socials
+            .filter((social) => social.category === "main-content")
+            .map((social) => (
+              <SocialLink href={social.url} social={social.type}>
+                {social.name}
+              </SocialLink>
+            ))
+        }
+      </div>
+      <div>
+        <h2 class="title">Коммьюнити</h2>
+      </div>
+      <div class="socials-container">
+        {
+          socials
+            .filter((social) => social.category === "community")
+            .map((social) => (
+              <SocialLink href={social.url} social={social.type}>
+                {social.name}
+              </SocialLink>
+            ))
+        }
+      </div>
+      <div>
+        <h2 class="title">Персональная хуйня</h2>
+      </div>
+      <div class="socials-container">
+        {
+          socials
+            .filter((social) => social.category === "personal")
+            .map((social) => (
+              <SocialLink href={social.url} social={social.type}>
+                {social.name}
+              </SocialLink>
+            ))
+        }
+      </div>
+    </div>
   </main>
 </Layout>
 <style>
   .main {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
     align-items: stretch;
     justify-content: center;
-    gap: 2rem;
+    /* justify-items: stretch; */
+    gap: 1rem;
     padding: 2rem;
-    max-width: 700px;
+    max-width: 1200px;
     border-radius: 4rem;
     margin: 0 auto;
     flex-grow: 1;
+    /* background-color: rgba(0, 0, 0, 0.7); */
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
   }
 
   .title {
-    color: white;
-    font-size: 32px;
-    padding: 1rem 4rem;
-    backdrop-filter: blur(var(--background-blur-primary));
+    display: flex;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 2px;
+    font-size: 20px;
+    font-weight: 600;
+    /* padding: 1rem 4rem; */
+    margin: 0;
+    /* backdrop-filter: blur(var(--background-blur-primary)); */
     border-radius: 4rem;
-    text-align: center;
+    text-align: left;
+    /* align-self: flex-start;
+    justify-self: flex-start; */
+    /* margin-right: auto; */
+    text-shadow:
+      0px 0px 4px oklch(0 0 0),
+      0px 0px 8px oklch(0 0 0);
+  }
+
+  .socials-container {
+    width: 100%;
+    /* display: grid; */
+    /* grid-template-columns: 50% 50%; */
+    /* grid-template-columns: repeat(auto-fill, minmax(375px, 1fr)); */
+    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 </style>

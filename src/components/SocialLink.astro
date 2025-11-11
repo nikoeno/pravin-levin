@@ -35,6 +35,7 @@ const socialIcons = {
   vk: "src/assets/socials_icons/dark/vk.svg",
   whatsapp: "src/assets/socials_icons/dark/whatsapp.svg",
   youtube: "src/assets/socials_icons/dark/youtube.svg",
+  "": "",
 } as const;
 
 const iconUrl = socialIcons[social];
@@ -42,7 +43,7 @@ const iconUrl = socialIcons[social];
 
 <a href={href} class="social" target="_blank" rel="noopener noreferrer">
   <div class="social-icon-container">
-    <img src={iconUrl} alt="" class="social-icon" />
+    {iconUrl && <img src={iconUrl} alt="" class="social-icon" />}
   </div>
   <slot />
 </a>
@@ -52,26 +53,32 @@ const iconUrl = socialIcons[social];
     box-sizing: border-box;
     position: relative;
     display: flex;
-    justify-content: center;
+    flex-basis: 45%;
+    justify-content: start;
+    text-align: center;
     align-items: center;
-    gap: 0.5rem;
     border: 2px solid rgba(255, 255, 255, 0.1);
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0.6);
     transition:
       background-color 0.2s ease-in-out,
       transform 0.2s ease-in-out;
     color: white;
-    font-size: 32px;
+    font-size: 16px;
     font-weight: 600;
-    letter-spacing: 4px;
-    padding: 1rem 4rem;
+    letter-spacing: 2px;
+    padding: .5rem 1.5rem;
+    padding-left: 3.5rem;
     backdrop-filter: blur(var(--background-blur-primary));
     border-radius: 4rem;
-    text-align: center;
     text-shadow:
       0px 0px 4px oklch(0 0 0),
       0px 0px 8px oklch(0 0 0);
     box-shadow: 0px 0px 32px -13px oklch(28.2% 0.091 267.935);
+    flex-grow: 1;
+  }
+
+  .social:last-child {
+    grid-column: span auto-fill;
   }
 
   .social:hover {
@@ -90,8 +97,8 @@ const iconUrl = socialIcons[social];
   }
 
   .social-icon {
-    width: 32px;
-    height: 32px;
+    width: 20px;
+    height: 20px;
   }
 
   .social-icon-container::before {
