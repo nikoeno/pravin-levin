@@ -9,33 +9,33 @@ interface Props extends HTMLAttributes<"a"> {
 const { href, social } = Astro.props;
 
 const socialIcons = {
-  apple: "src/assets/socials_icons/dark/apple.svg",
-  bluesky: "src/assets/socials_icons/dark/bluesky.svg",
-  discord: "src/assets/socials_icons/dark/discord.svg",
-  dribble: "src/assets/socials_icons/dark/dribble.svg",
-  facebook: "src/assets/socials_icons/dark/facebook.svg",
-  figma: "src/assets/socials_icons/dark/figma.svg",
-  github: "src/assets/socials_icons/dark/github.svg",
-  google: "src/assets/socials_icons/dark/google.svg",
-  instagram: "src/assets/socials_icons/dark/instagram.svg",
-  linkedin: "src/assets/socials_icons/dark/linkedin.svg",
-  medium: "src/assets/socials_icons/dark/medium.svg",
-  messenger: "src/assets/socials_icons/dark/messenger.svg",
-  pinterest: "src/assets/socials_icons/dark/pinterest.svg",
-  reddit: "src/assets/socials_icons/dark/reddit.svg",
-  signal: "src/assets/socials_icons/dark/signal.svg",
-  snapchat: "src/assets/socials_icons/dark/snapchat.svg",
-  spotify: "src/assets/socials_icons/dark/spotify.svg",
-  telegram: "src/assets/socials_icons/dark/telegram.svg",
-  threads: "src/assets/socials_icons/dark/threads.svg",
-  tiktok: "src/assets/socials_icons/dark/tiktok.svg",
-  tumblr: "src/assets/socials_icons/dark/tumblr.svg",
-  twitch: "src/assets/socials_icons/dark/twitch.svg",
-  twitter: "src/assets/socials_icons/dark/twitter.svg",
-  vk: "src/assets/socials_icons/dark/vk.svg",
-  whatsapp: "src/assets/socials_icons/dark/whatsapp.svg",
-  youtube: "src/assets/socials_icons/dark/youtube.svg",
-  "": "",
+  apple: "/assets/socials_icons/dark/apple.svg",
+  bluesky: "/assets/socials_icons/dark/bluesky.svg",
+  discord: "/assets/socials_icons/dark/discord.svg",
+  dribble: "/assets/socials_icons/dark/dribble.svg",
+  facebook: "/assets/socials_icons/dark/facebook.svg",
+  figma: "/assets/socials_icons/dark/figma.svg",
+  github: "/assets/socials_icons/dark/github.svg",
+  google: "/assets/socials_icons/dark/google.svg",
+  instagram: "/assets/socials_icons/dark/instagram.svg",
+  linkedin: "/assets/socials_icons/dark/linkedin.svg",
+  medium: "/assets/socials_icons/dark/medium.svg",
+  messenger: "/assets/socials_icons/dark/messenger.svg",
+  pinterest: "/assets/socials_icons/dark/pinterest.svg",
+  reddit: "/assets/socials_icons/dark/reddit.svg",
+  signal: "/assets/socials_icons/dark/signal.svg",
+  snapchat: "/assets/socials_icons/dark/snapchat.svg",
+  spotify: "/assets/socials_icons/dark/spotify.svg",
+  telegram: "/assets/socials_icons/dark/telegram.svg",
+  threads: "/assets/socials_icons/dark/threads.svg",
+  tiktok: "/assets/socials_icons/dark/tiktok.svg",
+  tumblr: "/assets/socials_icons/dark/tumblr.svg",
+  twitch: "/assets/socials_icons/dark/twitch.svg",
+  twitter: "/assets/socials_icons/dark/twitter.svg",
+  vk: "/assets/socials_icons/dark/vk.svg",
+  whatsapp: "/assets/socials_icons/dark/whatsapp.svg",
+  youtube: "/assets/socials_icons/dark/youtube.svg",
+  "": "/assets/socials_icons/dark/google.svg",
 } as const;
 
 const iconUrl = socialIcons[social];
@@ -50,12 +50,12 @@ const iconUrl = socialIcons[social];
 
 <style>
   .social {
-    box-sizing: border-box;
+    box-sizing: content-box;
     position: relative;
     display: flex;
     flex-basis: 45%;
     justify-content: start;
-    text-align: center;
+    text-align: left;
     align-items: center;
     border: 2px solid rgba(255, 255, 255, 0.1);
     background-color: rgba(0, 0, 0, 0.6);
@@ -65,16 +65,20 @@ const iconUrl = socialIcons[social];
     color: white;
     font-size: 16px;
     font-weight: 600;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     padding: .5rem 1.5rem;
     padding-left: 3.5rem;
     backdrop-filter: blur(var(--background-blur-primary));
-    border-radius: 4rem;
+    border-radius: 1rem;
     text-shadow:
       0px 0px 4px oklch(0 0 0),
       0px 0px 8px oklch(0 0 0);
     box-shadow: 0px 0px 32px -13px oklch(28.2% 0.091 267.935);
     flex-grow: 1;
+    min-height: 3em;
+    line-height: 1;
+    /* height: ; */
+    /* height: fit-content; */
   }
 
   .social:last-child {
