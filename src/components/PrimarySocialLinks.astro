@@ -1,0 +1,34 @@
+---
+import MainSocialLink from "./MainSocialLink.astro";
+
+const { socials, class: classes, ...rest } = Astro.props;
+
+interface Props {
+  class: string;
+  socials: Readonly<
+    {
+      name: string;
+      url: string;
+      type: string;
+    }[]
+  >;
+}
+---
+
+<div class:list={["primary-socials", classes]} {...rest}>
+  {
+    socials.map((social) => (
+      <MainSocialLink
+        href={social.url}
+        social={social.type}
+        name={social.name}
+      />
+    ))
+  }
+</div>
+
+<style>
+  .primary-socials {
+    display: flex;
+  }
+</style>

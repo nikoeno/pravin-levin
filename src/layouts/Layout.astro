@@ -7,8 +7,12 @@
     <meta name="generator" content={Astro.generator} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
+    <!-- <link
       href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
+      rel="stylesheet"
+    /> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sora:wght@100..800&display=swap"
       rel="stylesheet"
     />
     <title>Astro Basics</title>
@@ -21,7 +25,7 @@
 <style>
   html,
   body {
-    font-family: "Sora", sans-serif;
+    font-family: "Lato", sans-serif;
   }
 
   body {
@@ -30,11 +34,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-image: url("../assets/bg9.jpg"); */
-    background-image: url("../assets/bg10.jpg");
+    flex-direction: column;
+    background-image: url("../assets/nix-main-bg.jpg");
 
     background-size: cover;
     background-position: center;
+
+    text-shadow: 0 0px 8px rgba(0, 0, 0, 0.1);
 
     --background-blur-primary: 2px;
   }

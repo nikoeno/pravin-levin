@@ -1,0 +1,27 @@
+---
+const { class: cardClass, ...restProps } = Astro.props;
+---
+
+<div class:list={["card", cardClass]} {...restProps}>
+  <slot />
+</div>
+
+<style>
+  .card {
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 2rem;
+    padding: 1rem;
+    /*box-shadow: 0 2px 20px rgba(255, 255, 255, 0.05);*/
+    /*box-shadow: 0 2px 20px rgba(255, 255, 255, 0.05);*/
+    box-shadow:
+      0 2px 15px rgba(0, 0, 0, 0.1),
+      inset 0 2px 20px rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(6px);
+    background: linear-gradient(
+      to right,
+      rgba(0, 156, 255, 0.3),
+      rgba(3, 139, 230, 0.3),
+      rgba(5, 123, 205, 0.3)
+    );
+  }
+</style>

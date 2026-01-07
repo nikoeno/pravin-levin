@@ -1,34 +1,39 @@
 ---
 import type { HTMLAttributes } from "astro/types";
-import Card from "./Card.astro";
 import { socialIcons } from "../constants";
 
 interface Props extends HTMLAttributes<"a"> {
   href: string;
   social: keyof typeof socialIcons;
+  name: string;
 }
 
-const { href, social } = Astro.props;
+const { href, social, name } = Astro.props;
 
 const iconUrl = socialIcons[social];
 ---
 
-<a href={href} class="social" target="_blank" rel="noopener noreferrer">
-  <Card class="social-card">
-    <div class="social-icon-container">
-      {iconUrl && <img src={iconUrl} alt="" class="social-icon" />}
-    </div>
-    <slot />
-  </Card>
+<a
+  href={href}
+  class="social"
+  target="_blank"
+  rel="noopener noreferrer"
+  title={name}
+>
+  <div class="social-icon-container">
+    {iconUrl && <img src={iconUrl} alt="" class="social-icon" />}
+  </div>
+  <slot />
 </a>
 
 <style>
   .social {
-    /*box-sizing: content-box;*/
+    flex-grow: 0;
+    box-sizing: content-box;
     position: relative;
-    display: flex;
+    display: block;
     justify-content: start;
-    text-align: center;
+    text-align: left;
     align-items: center;
     transition:
       background-color 0.2s ease-in-out,
@@ -36,19 +41,13 @@ const iconUrl = socialIcons[social];
     color: white;
     font-size: 1.25rem;
     font-weight: 400;
-    /*padding-left: 3.5rem;*/
-    /*backdrop-filter: blur(var(--background-blur-primary));*/
-    border-radius: 1rem;
-    flex-grow: 1;
-    /*min-height: 3em;*/
+    /*letter-spacing: 1px;*/
     line-height: 1;
-    /* height: ; */
-    /* height: fit-content;
-  }*/
+    padding: 0.75rem;
+  }
 
-  .social-card {
-    width: 100%;
-    padding-left: 3.5rem;
+  .social:last-child {
+    grid-column: span auto-fill;
   }
 
   .social:hover {
@@ -60,19 +59,11 @@ const iconUrl = socialIcons[social];
   }
 
   .social-icon-container {
-    position: absolute;
-    top: 50%;
-    left: 1.5rem;
-    transform: translateY(-50%);
   }
 
   .social-icon {
-    width: 1.75rem;
-    height: 1.75rem;
-  }
-
-  .social-card {
-    padding: 1.5rem;
+    width: 20px;
+    height: 20px;
   }
 
   .social-icon-container::before {
@@ -86,6 +77,5 @@ const iconUrl = socialIcons[social];
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /*box-shadow: 0 0 48px 12px oklch(28.2% 0.091 267.935);*/
   }
 </style>
