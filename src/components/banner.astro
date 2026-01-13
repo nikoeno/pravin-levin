@@ -42,8 +42,7 @@ const iconUrl = socialIcons[social];
 
   .social-card {
     width: 100%;
-    padding: 1.5rem;
-    padding-left: 4.5rem;
+    padding-left: 3.5rem;
   }
 
   .social:hover {
@@ -66,6 +65,10 @@ const iconUrl = socialIcons[social];
     height: 2rem;
   }
 
+  .social-card {
+    padding: 1.5rem;
+  }
+
   .social-icon-container::before {
     content: "";
     z-index: -1;
@@ -76,13 +79,6 @@ const iconUrl = socialIcons[social];
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  @media (max-width: 768px) {
-    .social {
-      font-size: 1rem;
-      text-align: left;
-    }
+    transform: translate(-50%, -50%;
   }
 </style>

@@ -1,16 +1,20 @@
 ---
-import SanyaNix from '../assets/nix.jpg'
+import SanyaNix from "../assets/nix.jpg";
+const { class: logoClass, ...restProps } = Astro.props;
 ---
 
-<!-- <img class="logo" src="https://shared.fastly.steamstatic.com/community_assets/images/items/1629910/426703029579f91b5be691806e049fe4d6f59ec3.gif" alt=""> -->
-<img class="logo" src={SanyaNix.src} alt="">
+<img
+  class:list={["logo", logoClass]}
+  src={SanyaNix.src}
+  alt=""
+  {...restProps}
+/>
 <style>
-.logo {
-  height: 150px;
-  width: 150px;
-  display: block;
-  border-radius: 50%;
-  /* margin: 0 auto; */
-  object-fit: cover;
-}
+  .logo {
+    height: 150px;
+    width: 150px;
+    display: block;
+    border-radius: 50%;
+    object-fit: cover;
+  }
 </style>

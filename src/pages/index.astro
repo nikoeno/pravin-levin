@@ -1,21 +1,18 @@
 ---
 import Card from "../components/Card.astro";
 import Logo from "../components/Logo.astro";
-import MainSocialLink from "../components/MainSocialLink.astro";
 import PrimarySocialLinks from "../components/PrimarySocialLinks.astro";
 import SocialLink from "../components/SocialLink.astro";
 import Layout from "../layouts/Layout.astro";
 import { secondarySocials, primarySocials } from "../constants";
 import "../preflight.css";
-
-type Categories = "main-content" | "community" | "personal" | "other";
 ---
 
 <Layout>
   <main class="main">
     <div class="container">
       <Card class="hero">
-        <Logo />
+        <Logo class="logo" />
         <div class="hero-content">
           <h1 class="title">Nix</h1>
           <PrimarySocialLinks socials={primarySocials} class="hero-socials" />
@@ -25,9 +22,6 @@ type Categories = "main-content" | "community" | "personal" | "other";
           </p>
         </div>
       </Card>
-      <!-- <div>
-        <h2 class="title">Стримы и записи</h2>
-      </div> -->
       <div class="socials-container">
         {
           secondarySocials.map((social) => (
@@ -46,17 +40,12 @@ type Categories = "main-content" | "community" | "personal" | "other";
 <style>
   .main {
     display: flex;
-    /* flex-direction: column; */
     flex-wrap: wrap;
     align-items: stretch;
     justify-content: center;
-    /* justify-items: stretch; */
-    /* gap: 1rem; */
     padding: 1rem;
     border-radius: 4rem;
     margin: 0 auto;
-    /* flex-grow: 1; */
-    /* background-color: rgba(0, 0, 0, 0.7); */
   }
 
   .container {
@@ -119,5 +108,22 @@ type Categories = "main-content" | "community" | "personal" | "other";
   .footer {
     padding: 2.5rem;
     margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 2rem;
+      flex-direction: column;
+      margin: 0;
+    }
+
+    .logo {
+      display: none;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
   }
 </style>
