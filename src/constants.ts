@@ -113,4 +113,9 @@ export const secondarySocials = [
     url: "https://discord.gg/nix",
     type: "discord",
   },
+  {
+    name: "Прямая связь в телеграмм",
+    url: "https://t.me/nixtalk?direct",
+    type: "telegram",
+  },
 ] as const;
