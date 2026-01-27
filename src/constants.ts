@@ -45,7 +45,14 @@ export const banners = [
   },
 ] as const;
 
-export const primarySocials = [
+export const primarySocials = [] as const;
+
+export const secondarySocials = [
+  {
+    name: "Почта для деловых предложений",
+    url: "nixoffers@gmail.com",
+    type: "email",
+  },
   {
     name: "Основной канал для стримов",
     url: "https://www.twitch.tv/Nix",
@@ -70,14 +77,6 @@ export const primarySocials = [
     name: "Группа ВК новости и мемы",
     url: "https://vk.com/nixjke",
     type: "vk",
-  },
-] as const;
-
-export const secondarySocials = [
-  {
-    name: "Почта для деловых предложений",
-    url: "nixoffers@gmail.com",
-    type: "email",
   },
   {
     name: "Хайлайты",

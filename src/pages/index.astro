@@ -15,7 +15,14 @@ import "../preflight.css";
         <Logo class="logo" />
         <div class="hero-content">
           <h1 class="title">Nix</h1>
-          <PrimarySocialLinks socials={primarySocials} class="hero-socials" />
+          {
+            Boolean(primarySocials.length) && (
+              <PrimarySocialLinks
+                socials={primarySocials}
+                class="hero-socials"
+              />
+            )
+          }
           <p class="subtitle">
             Фрукты не дышать корень имбиря стоять на голове холодный душ спать
             на полу с открытыми глазами
@@ -94,6 +101,7 @@ import "../preflight.css";
   .hero-content {
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
   }
 
   .hero-socials {
