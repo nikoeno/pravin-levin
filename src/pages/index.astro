@@ -4,7 +4,12 @@ import Logo from "../components/Logo.astro";
 import PrimarySocialLinks from "../components/PrimarySocialLinks.astro";
 import SocialLink from "../components/SocialLink.astro";
 import Layout from "../layouts/Layout.astro";
-import { secondarySocials, primarySocials } from "../constants";
+import {
+  secondarySocials,
+  primarySocials,
+  title,
+  subtitle,
+} from "../constants";
 import "../preflight.css";
 ---
 
@@ -14,7 +19,7 @@ import "../preflight.css";
       <Card class="hero">
         <Logo class="logo" />
         <div class="hero-content">
-          <h1 class="title">Nix</h1>
+          <h1 class="title">{title}</h1>
           {
             Boolean(primarySocials.length) && (
               <PrimarySocialLinks
@@ -23,10 +28,7 @@ import "../preflight.css";
               />
             )
           }
-          <p class="subtitle">
-            Фрукты не дышать корень имбиря стоять на голове холодный душ спать
-            на полу с открытыми глазами
-          </p>
+          <p class="subtitle">{subtitle}</p>
         </div>
       </Card>
       <div class="socials-container">
@@ -51,8 +53,8 @@ import "../preflight.css";
     align-items: stretch;
     justify-content: center;
     padding: 1rem;
-    border-radius: 4rem;
     margin: 0 auto;
+    width: 100%;
   }
 
   .container {
@@ -72,7 +74,6 @@ import "../preflight.css";
     line-height: 1;
     font-weight: 600;
     margin: 0;
-    border-radius: 4rem;
     text-align: left;
   }
 
@@ -90,7 +91,7 @@ import "../preflight.css";
 
   .hero {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     color: white;
     padding: 28px 96px;
@@ -121,12 +122,21 @@ import "../preflight.css";
   @media (max-width: 768px) {
     .hero {
       padding: 2rem;
-      flex-direction: column;
+      gap: 1rem;
+      /* flex-direction: column; */
+      justify-content: flex-start;
+      align-items: start;
       margin: 0;
     }
 
     .logo {
-      display: none;
+      /* display: none; */
+      /* transform: scale(1.5); */
+      /* width: 100%; */
+      /* max-width: 250px; */
+      /* height: 250px; */
+      /* height: auto; */
+      /* transform: translateY(0%) */
     }
 
     .subtitle {

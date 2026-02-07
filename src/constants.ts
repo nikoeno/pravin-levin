@@ -31,6 +31,7 @@ export const socialIcons = {
   file: "/assets/socials_icons/file.svg",
   "": "/assets/socials_icons/google.svg",
 } as const;
+export type SocialsType = keyof typeof socialIcons;
 
 export const banners = [
   {
@@ -49,42 +50,42 @@ export const primarySocials = [] as const;
 
 export const secondarySocials = [
   {
-    name: "Почта для деловых предложений",
-    url: "nixoffers@gmail.com",
-    type: "email",
-  },
-  {
-    name: "Основной канал для стримов",
+    name: "Стримы на Twitch",
     url: "https://www.twitch.tv/Nix",
     type: "twitch",
   },
   {
-    name: "Канал с постами и анонсами стримов",
+    name: "Основной канал Telegram",
     url: "https://t.me/nixtalk",
     type: "telegram",
   },
   {
-    name: "Записи просмотровых стримов",
-    url: "https://boosty.to/nixjkeee",
-    type: "boosty",
-  },
-  {
-    name: "Нарезчик в зоне",
-    url: "https://www.tiktok.com/@nix.dota",
-    type: "tiktok",
-  },
-  {
-    name: "Группа ВК новости и мемы",
-    url: "https://vk.com/nixjke",
-    type: "vk",
-  },
-  {
-    name: "Хайлайты",
+    name: "Основной канал Youtube",
     url: "https://www.youtube.com/@Nixtwitch",
     type: "youtube",
   },
   {
-    name: "Записи стримов",
+    name: "Tiktok",
+    url: "https://www.tiktok.com/@nix.dota",
+    type: "tiktok",
+  },
+  {
+    name: "VK",
+    url: "https://vk.com/nixjke",
+    type: "vk",
+  },
+  {
+    name: "Discord",
+    url: "https://discord.gg/nix",
+    type: "discord",
+  },
+  {
+    name: "Записи просмотровых стримов на Boosty",
+    url: "https://boosty.to/nixjkeee",
+    type: "boosty",
+  },
+  {
+    name: "Полные записи старых стримов",
     url: "https://www.youtube.com/@NixStreamVods/videos",
     type: "youtube",
   },
@@ -94,28 +95,26 @@ export const secondarySocials = [
     type: "youtube",
   },
   {
-    name: "Конфиг ПК и девайсы",
+    name: "ПК и девайсы",
     url: "https://docs.google.com/document/d/148k6vnWZp0ALa4VmPxNV0NaSm5VtpHno7ll8rI2vgx0/edit?tab=t.0",
     type: "file",
   },
   {
-    name: "рейтинг аниме на Шикимори",
+    name: "Shikimori",
     url: "https://shikimori.one/nixjke/list/anime?order=rate_score",
     type: "shikimori",
   },
   {
-    name: "Телеграм чат",
-    url: "https://t.me/NixtalkChat",
-    type: "telegram",
+    name: "Почта для деловых предложений",
+    url: "nixoffers@gmail.com",
+    type: "email",
   },
   {
-    name: "Дискорд сервер",
-    url: "https://discord.gg/nix",
-    type: "discord",
-  },
-  {
-    name: "Прямая связь в телеграмм",
+    name: "Личные вопросы и прямая связь",
     url: "https://t.me/nixtalk?direct",
     type: "telegram",
   },
 ] as const;
+
+export const title = "Nix";
+export const subtitle = "Ex–pro Dota 2 player, Community caster, Streamer";

@@ -1,6 +1,6 @@
 ---
 import MainSocialLink from "./MainSocialLink.astro";
-
+import type { SocialsType } from "../constants.ts";
 const { socials, class: classes, ...rest } = Astro.props;
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
     {
       name: string;
       url: string;
-      type: string;
+      type: SocialsType;
     }[]
   >;
 }
