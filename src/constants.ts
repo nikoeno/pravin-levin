@@ -46,7 +46,18 @@ export const banners = [
   },
 ] as const;
 
-export const primarySocials = [] as const;
+export const primarySocials = [
+  {
+    name: "Почта для деловых предложений",
+    url: "nixoffers@gmail.com",
+    type: "email",
+  },
+  {
+    name: "Личные вопросы и прямая связь",
+    url: "https://t.me/nixtalk?direct",
+    type: "telegram",
+  },
+] as const;
 
 export const secondarySocials = [
   {
@@ -103,16 +114,6 @@ export const secondarySocials = [
     name: "Shikimori",
     url: "https://shikimori.one/nixjke/list/anime?order=rate_score",
     type: "shikimori",
-  },
-  {
-    name: "Почта для деловых предложений",
-    url: "nixoffers@gmail.com",
-    type: "email",
-  },
-  {
-    name: "Личные вопросы и прямая связь",
-    url: "https://t.me/nixtalk?direct",
-    type: "telegram",
   },
 ] as const;
 

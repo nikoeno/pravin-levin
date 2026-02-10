@@ -8,15 +8,20 @@ interface Props extends HTMLAttributes<"a"> {
   social: keyof typeof socialIcons;
 }
 
-const { href, social } = Astro.props;
+const { href, social, class: className, ...restProps } = Astro.props;
 
 const iconUrl = socialIcons[social];
 
 const emailHref = `mailto:${href}`;
-
 ---
 
-<a href={social === 'email' ? emailHref : href} class="social" target="_blank" rel="noopener noreferrer">
+<a
+  href={social === "email" ? emailHref : href}
+  class:list={["social", className]}
+  target="_blank"
+  rel="noopener noreferrer"
+  {...restProps}
+>
   <Card class="social-card">
     <div class="social-icon-container">
       {iconUrl && <img src={iconUrl} alt="" class="social-icon" />}
