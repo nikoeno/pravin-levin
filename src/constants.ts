@@ -92,7 +92,7 @@ export const secondarySocials = [
     type: "discord",
   },
   {
-    name: "Записи просмотровых стримов на Boosty",
+    name: "Записи удалённых стримов на Boosty (free)",
     url: "https://boosty.to/nixjkeee",
     type: "boosty",
   },
@@ -119,4 +119,4 @@ export const secondarySocials = [
 ] as const;
 
 export const title = "Nix";
-export const subtitle = "Ex–pro Dota 2 player, Community caster, Streamer";
+export const subtitle = "Streamer, Ex‑pro Dota 2 player, Content Creator" ;
