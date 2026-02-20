@@ -119,4 +119,4 @@ export const secondarySocials = [
 ] as const;
 
 export const title = "Nix";
-export const subtitle = "Streamer, Ex‑pro Dota 2 player, Content Creator" ;
+export const subtitle = "Streamer, Ex‑pro Dota 2 player, Content Creator";
