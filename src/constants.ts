@@ -53,11 +53,6 @@ export const primarySocials = [
     url: "nixoffers@gmail.com",
     type: "email",
   },
-  {
-    name: "Личные вопросы и прямая связь",
-    url: "https://t.me/nixtalk?direct",
-    type: "telegram",
-  },
 ] as const;
 
 export const secondarySocials = [
